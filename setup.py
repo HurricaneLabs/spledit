@@ -13,7 +13,8 @@ setup(
     description="spledit - Modify Splunk configuration files via REST API",
     install_requires=[
         "pyotp",
-        "requests"
+        "requests",
+        "six"
     ],
     entry_points={
         "console_scripts": [
