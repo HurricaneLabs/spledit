@@ -1,4 +1,5 @@
 import argparse
+import configparser
 import getpass
 import logging
 import subprocess
@@ -8,7 +9,6 @@ import warnings
 
 import pyotp
 import requests
-from six.moves import configparser
 from six.moves.urllib.parse import urljoin, quote
 try:
     # pylint: disable=ungrouped-imports

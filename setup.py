@@ -12,6 +12,7 @@ setup(
     py_modules=["spledit"],
     description="spledit - Modify Splunk configuration files via REST API",
     install_requires=[
+        "configparser;python_version<'3.0'",
         "pyotp",
         "requests",
         "six"
