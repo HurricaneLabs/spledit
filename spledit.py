@@ -9,7 +9,7 @@ import warnings
 
 import pyotp
 import requests
-from six.moves.urllib.parse import urljoin, urlquote
+from six.moves.urllib.parse import urljoin, quote
 try:
     # pylint: disable=ungrouped-imports
     from requests.packages.urllib3 import exceptions
@@ -161,7 +161,7 @@ def main():
     all_sections = list(set(new_config.sections() + live_config.sections()))
 
     for section in all_sections:
-        url_section = urlquote(section, safe="")
+        url_section = quote(section, safe="")
 
         if section in live_config and section in new_config:
             live_config_dict = {k: v for (k, v) in live_config[section].items()}
@@ -200,3 +200,7 @@ def main():
                 data=new_config_dict
             )
             r.raise_for_status()
+
+
+if __name__ == "__main__":
+    main()
